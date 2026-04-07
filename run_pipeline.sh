@@ -6,6 +6,8 @@
 
 set -euo pipefail
 
+eval "$(micromamba shell hook --shell bash)"
+
 SCRIPTS_DIR="$(dirname "$0")/scripts"
 
 echo "======================================================"

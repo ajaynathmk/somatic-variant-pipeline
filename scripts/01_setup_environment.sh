@@ -5,6 +5,9 @@
 
 set -euo pipefail
 
+eval "$(micromamba shell hook --shell bash)"
+micromamba activate somatic-variant-pipeline
+
 echo ">>> Creating project directories..."
 mkdir -p data/fastq ref results/fastqc vep_cache
 
@@ -12,6 +15,8 @@ echo ">>> Creating conda environment..."
 micromamba env create -n somatic-variant-pipeline \
     -c bioconda -c conda-forge \
     bwa samtools gatk4 fastqc bcftools tabix cyvcf2 ensembl-vep -y
+
+micromamba activate somatic-variant-pipeline
 
 echo ">>> Downloading FASTQ files from Zenodo..."
 BASE_URL="https://zenodo.org/record/2582555/files"

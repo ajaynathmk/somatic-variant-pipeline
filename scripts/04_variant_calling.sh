@@ -5,6 +5,9 @@
 
 set -euo pipefail
 
+eval "$(micromamba shell hook --shell bash)"
+micromamba activate somatic-variant-pipeline
+
 REF="ref/ref_slice.fa"
 INTERVAL="5:12000000-17000000"
 

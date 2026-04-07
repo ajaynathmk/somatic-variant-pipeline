@@ -5,6 +5,9 @@
 
 set -euo pipefail
 
+eval "$(micromamba shell hook --shell bash)"
+micromamba activate somatic-variant-pipeline
+
 echo ">>> Annotating filtered variants with VEP..."
 vep \
     -i results/filtered_somatic.vcf.gz \

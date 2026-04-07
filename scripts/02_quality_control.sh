@@ -5,6 +5,9 @@
 
 set -euo pipefail
 
+eval "$(micromamba shell hook --shell bash)"
+micromamba activate somatic-variant-pipeline
+
 echo ">>> Running FastQC on all FASTQ files..."
 mkdir -p results/fastqc
 
