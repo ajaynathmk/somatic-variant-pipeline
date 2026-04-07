@@ -1,0 +1,28 @@
+# Raw and intermediate data
+data/
+ref/
+vep_cache/
+
+# Pipeline outputs
+results/*.bam
+results/*.bai
+results/*.vcf
+results/*.vcf.gz
+results/*.vcf.gz.tbi
+results/*.tbi
+results/fastqc/
+
+# Keep placeholder files
+!results/.gitkeep
+!data/fastq/.gitkeep
+!ref/.gitkeep
+!vep_cache/.gitkeep
+
+# Conda/micromamba
+*.conda
+*.tar.bz2
+*.tar.gz
+
+# OS
+.DS_Store
+Thumbs.db
